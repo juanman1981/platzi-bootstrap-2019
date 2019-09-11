@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <title>Platzi Conf Hawai</title>
+  </head>
+  <body data-spy="scroll" data-target="#navbar" data-offset="57"> <!--El alto tiene q ser el mismo que el del header en el data-offset para que el area de La conferencia se ilumine, es decir que se tome en cuenta el header en el id main, el data-target apunta al #navbar que contiene los elementos de navegacion del sitio, en la pagina de bootstrap se encuentra la seccion Scrollspy, de ahi sacamos el data-spy="scroll"  que nos permite que los menus se iluminen al navegar por el sitio y asi el cliente sepa en que seccion se encuentra-->
+    <!-- header -->
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top"> <!--Con sticky-top el nav header nos sigue a lo lago de la pagina, si al nav lo envuelve una etiqueta header se debe poner sticky-top en vez de fixed-top -->
+      <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/platzi-logo.png" alt="Platzi logo">
+        Conf Hawai
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar"> <!--El scrollspy hace referencia a este id= navbar -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <!--Eliminamos el active de la clase para que no se iluminen los menus, si no segun vamos navegando se iluminan -->
+            <a class="nav-link" href="#main">La conferencia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#speakers">Los Oradores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#place-time">El lugar y la fecha</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#conviertete-en-orador">Conviertete en orador</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-platzi" href="#" data-toggle="modal" data-target="#modalCompra">Comprar tickets</a> <!-- Aqui agregamos un modal en el data-target, el modal direcciona al id=#modalCompra, ponemos un data-toggle especificando que es un modal, todo esto se encuentra en bootstrap modals-->
+          </li>
+        </ul>
+      </div>
+     </div>
+    </nav>
+    <!-- /header -->
+    <!-- <main> -->
+    <main id="main">
+      <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-pause="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/images/hawaii.jpg" class="d-block w-100" alt="Hawaii 1">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/hawaii2.jpg" class="d-block w-100" alt="Hawaii 2">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/hawaii3.jpeg" class="d-block w-100" alt="Hawaii 3">
+          </div>
+          <!-- <div class="card bg-dark text-white">
+  <img src="..." class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text">Last updated 3 mins ago</p>
+  </div>
+</div>  --> <!--ESTA TECNICA HACE LO MISMO Q EL OVERLAY, Y SE ENCUENTRA EN LA DOCUMENTACION DE BOOTSTRAP, OJO (TAMBIEN TOCA AGREGAR UN Z-INDEX AL CSS PARA Q APAREZCA) -->
+          <div class="overlay">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-6 offset-md-6 text-center text-md-right">  <!--Si queremos q el texto salga centrado solo para dispositivos pequeños ponemos text-md-right, si queremos q este centrado para los disposivos mas abajo que el md ponemos text-center. -->
+                  <h1>Platzi conf Hawaii</h1>
+                  <p class="d-none d-md-block"> <!-- Est clace lo que hace es q d-none desaparece el parrafo, y y d-md-block lo hace aparecer en dispositivos medianos-->
+                    Platzi conf, llega por primera vez a Hawaii! Un evento para
+                    compartir con nuestra comunidad el conocimiento y experiencia
+                    de los expertos que estan creando el futuro de internet.
+                    ven a conocer a miembros del Team Platzi, a otros
+                    estudiantes de Platzi y a los oradores de primer nivel
+                    que tenemos para ti, te esperamos!</p>
+                    <a href="#" class="btn btn-outline-light">Quiero ser orador</a> <!-- La clase para los botones., tambien puede ser aplicada a los links-->
+                    <button type="button" class="btn btn-platzi" data-toggle="modal" data-target="#modalCompra">Comprar tickets</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- </main> -->
+    <!-- speakers -->
+    <section id="speakers" class="mt-4"> <!--mt= Margin top mb= Margin bottom -->
+      <div class="container">
+        <div class="row">
+          <div class="col text-center text-uppercase">
+            <small>Conoce a los</small>
+            <h2>Oradores</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4"> <!-- Con col-md-6 col-lg-4 asignamos 4 columnas, es decir 4 tarjetas pr linea, mb= margin bottom-->
+            <div class="card">
+              <img src="assets/speakers/sacha.jpg" class="card-img-top" alt="Foto de Sacha">
+              <div class="card-body">
+                <div class="badges">
+                  <span class="badge badge-warning">Javascript</span>
+                  <span class="badge badge-info">React</span>
+                </div>
+                <h5 class="card-title">Sacha Lifszyc</h5>
+
+                <p class="card-text">Sed lacinia erat at neque egestas sagittis. Cras quis congue magna. Sed sollicitudin ultrices nulla, in convallis metus consequat eu.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4"> <!-- Con col-md-6 col-lg-4 asignamos 4 columnas, es decir 4 tarjetas pr linea, mb= margin bottom-->
+            <div class="card">
+              <img src="assets/speakers/leonidas2.jpeg" class="card-img-top" alt="Leonidas Esteban">
+              <div class="card-body">
+                <div class="badges">
+                  <span class="badge badge-warning">CSS</span>
+                  <span class="badge badge-info">HTML</span>
+                  <span class="badge badge-primary">Git</span>
+                </div>
+                <h5 class="card-title mb-0">Leonidas Esteban</h5>
+                <p class="card-text">Sed lacinia erat at neque egestas sagittis. Cras quis congue magna. Sed sollicitudin ultrices nulla, in convallis metus consequat eu.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4"> <!-- Con col-md-6 col-lg-4 asignamos 4 columnas, es decir 4 tarjetas pr linea con mb= Margin bottom generamos espacio entre columnas-->
+            <div class="card">
+              <img src="assets/speakers/freddy.jpeg" class="card-img-top" alt="Foto de Freddy">
+              <div class="card-body">
+                <div class="badges">
+                  <span class="badge badge-warning">Platzi</span>
+                  <span class="badge badge-info">Educacion online</span>
+                </div>
+                <h5 class="card-title mb-0">Freddy Vega</h5>
+                <p class="card-text">Sed lacinia erat at neque egestas sagittis. Cras quis congue magna. Sed sollicitudin ultrices nulla, in convallis metus consequat eu.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4"> <!-- Con col-md-6 col-lg-4 asignamos 4 columnas, es decir 4 tarjetas pr linea, , mb= margin bottom-->
+            <div class="card">
+              <img src="assets/speakers/cvander.jpeg" class="card-img-top" alt="Foto de Cristian">
+              <div class="card-body">
+                <div class="badges">
+                  <span class="badge badge-warning">Cripto</span>
+                  <span class="badge badge-info">Startups</span>
+                </div>
+                <h5 class="card-title mb-0">Cristian Van Der H.</h5>
+                <p class="card-text">Sed lacinia erat at neque egestas sagittis. Cras quis congue magna.
+                  Sed sollicitudin ultrices nulla, in convallis metus consequat eu.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /speakers -->
+    <!-- Lugar y fecha -->
+    <section id="place-time">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-lg-6 pl-0 pr-0"> <!-- pl= padding left, pr= padding right -->
+            <img src="assets/images/honolulu.jpg" alt="Honolulu">
+          </div>
+          <div class="col-12 col-lg-6 pb-4 pt-2"> <!-- Se puede usar py en vez de pb y pt, para eliminar los paddings tambien podemos usar: class="no-gutters" -->
+            <h2 class="mt-2">Honolulu - Octubre 2025</h2> <!-- En ste caso el titulo tiene un margin superior, lo mismo se ubiese podido si lo haciamos en clase col es decir "col mt-2" -->
+              <p>
+              Honolulu u Honolulú es la capital y localidad más grande del estado de Hawái, en los Estados Unidos.
+              Honolulu es la más sureña de entre las principales ciudades estadounidenses. Aunque el nombre de Honolulu
+              se refiere al área urbana en la costa sureste de la isla de Oahu, la ciudad y el condado de Honolulu
+              han formado una ciudad-condado consolidada que cubre toda la isla (aproximadamente 600 km² de superficie).
+              </p>
+              <a class="btn btn-outline-light" href="https://es.wikipedia.org/wiki/Honolulu">Conoce más</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Lugar y fecha -->
+      <!-- Conviertete en orador -->
+        <section id="conviertete en orador" class="pt-3 pb-3">
+          <div class="container">
+            <div class="row">
+              <div class="col text-uppercase text-center">
+                <small class="">Conviértete en un</small>
+                <h2>Orador</h2>
+              </div>
+            </div>
+            <div class="row">
+            <div class="col text-center">
+            Anótate como orador para dar una <abbr data-toggle="tooltip" title="Charlas de 5 minutos">charla ignite</abbr> <!-- con la etiqueta abbr colocamos el texto que queremos aparezca al poner el cursor sobre el texto charla ignite, esto lo encontramos en la pagina de bootstrap en content typography abbreviations -->
+            Cúentanos de que quieres hablar!
+            </div>
+            </div>
+            <div class="row">
+              <div class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2 pt-2">
+                <form>
+                  <div class="row">
+                    <div class="form-group col-12 col-md-6"> <!--Con form-group agrego cierto espasiado entre los imputs -->
+                      <input type="text" class="form-control" placeholder="Nombre">
+                    </div>
+                    <div class="form-group col-12 col-md-6"> <!--Con form-group agrego cierto espasiado entre los imputs -->
+                      <input type="text" class="form-control" placeholder="Apellido">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col">
+                      <textarea name="text" class="form-control form-control-lg" placeholder="Sobre que quieres hablar?"></textarea> <!--Con form-control le decimos a bootstrap que esto es un imput y con -lg le decimos que lo queremos de tamaño grande -->
+                      <small class="form-text text-muted"> <!--Text muted para que el texto aparezca mas gris, y form-text indicamos que es un texto para el formulario -->
+                        Recuerda incluir un titulo en tu charla.
+                      </small>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col">
+                      <button type="button" class="btn btn-platzi btn-block">Enviar</button> <!--Con btn-block el boton es del tamaño del todo el ancho de la columna  -->
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      <!-- /Conviertete en orador -->
+
+    <!-- Footer -->
+  <footer>
+    <div id="footer" class="pb-4 pt-4" > <!-- pb = a padding bottom pt = padding top cadauno con un valor de 1 a 4 -->
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12 col-lg">
+            <a href="#">Preguntas frecuentes</a>
+          </div>
+          <div class="col-12 col-lg">
+            <a href="#">Contactanos</a>
+          </div>
+          <div class="col-12 col-lg">
+            <a href="#">Prensa</a>
+          </div>
+          <div class="col-12 col-lg">
+            <a href="#">Conferencias</a>
+          </div>
+          <div class="col-12 col-lg">
+            <a href="#">Terminos y condiciones</a>
+          </div>
+          <div class="col-12 col-lg">
+            <a href="#">Privacidad</a>
+          </div>
+          <div class="col-12 col-lg">
+            <a href="#">Estudiantes</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+  <!-- /footer -->
+  <!--modal-->
+<!--Para implementar un modal debemos:
+Copiar el contenido HTML del modal como tal (mas no del botón). Es recomendable poner los modals fuera de cualquier otro elemento HTML (por ejemplo, al final de todas las secciones incluyendo el footer).
+Se recomienda cambiarle el nombre al id del modal, para una mejor legibilidad.
+Debemos asignar al ítem de navegación que abrirá el modal, las clases de ‘.data-toggle=”modal”’ y ‘”.data-target=”[#idDelContenidoHTMLDelModal]”’. -->
+
+  <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Comprar tickets</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="" action="index.html" method="post">
+            <div class="form-row">
+              <div class="form-group col">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+              </div>
+            </div>
+          </form>
+            <div class="alert alert-warning" role="alert">
+              Recibiras un correo de confirmacion si sales sorteado
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-platzi">Comprar</button> <!--Ponemos aca el btn-platzi para nuestro boton -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/modal-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="index.js"></script> <!--Este archivo lo creo yo, lo que hace es mostrar la informacion del texto charlas ignite con un archivo .js, para que esto funcione debe estar al ultimo de los scripts despues del jquery, del cloudflare y popper tambien En esta clase aprenderemos a incluir abreviaciones, que es un componente que le permite al visitante de tu página tener una definición inmediata de una palabra. Para más información checa este website: https://getbootstrap.com/docs/4.1/content/typography/#abbreviations y también agregaremos tooltips un plugin de jQuery que ya viene incluído en Bootstrap: https://getbootstrap.com/docs/4.1/components/tooltips/ -->
+  </body>
+</html>
